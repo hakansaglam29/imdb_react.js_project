@@ -4,7 +4,7 @@ import axios from "axios";
 import { CardListWrapper } from "./CardList.style"
 import { SearchBar } from '../SearchBar';
 
-const apiKey = "d161df73b66b9d1b527d3526c891aeca"; //temporary
+const apiKey = "apiKey"; //temporary
 const baseUrl = "https://api.themoviedb.org/3/search/movie";
 
 export const CardList = (props) => {
