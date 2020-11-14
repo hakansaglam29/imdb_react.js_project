@@ -31,7 +31,7 @@ export const StyledImage = styled.img`
 export const Styledowerview = styled.p`
     color: white;
     font-weight:500;
-    width:92.7%;
+    width:93.5%;
     height:auto;
     font-size: 0.7em;
     text-align:justify;

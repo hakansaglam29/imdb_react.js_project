@@ -6,41 +6,32 @@ export const Card = (props) => {
     function showOverview() {
         if (showData === 'none') {
             setShowData('block')
-    };}
+        };
+    }
 
-     function DontshowOverview() {
+    function DontshowOverview() {
         if (showData === 'block') {
             setShowData('none')
-    };}
-
-
+        };
+    }
 
     return (
         <div>
             <StyledCardWrapper>
                 <div>
-                <Show onMouseOver={showOverview} onMouseOut={DontshowOverview} onClick={showOverview}>
-                    <Relativdiv>
-                    <Styledowerview style={{ display: showData }}>
-                            <Styledp>{props.overview}</Styledp>
+                    <Show onMouseOver={showOverview} onMouseOut={DontshowOverview} onClick={showOverview}>
+                        <Relativdiv>
+                            <Styledowerview style={{ display: showData }}>
+                                <Styledp>{props.overview}</Styledp>
                             <Styledp>Release Date: {props.release_date}</Styledp>
-                            <Styledp style={{color:'yellow', fontSize:15}}>Avarage Vote: {props.vote_average}</Styledp>
-                            
-                        </Styledowerview>
-                        <StyledImage src={props.poster_path} />
-                       
-
-                        
-                    </Relativdiv>
+                                <Styledp style={{ color: 'yellow', fontSize: 15 }}>Avarage Vote: {props.vote_average}</Styledp>
+                            </Styledowerview>
+                            <StyledImage src={props.poster_path} alt='movie poster'/>
+                        </Relativdiv>
                     </Show>
-                    
                     <RelativdivTitle>
-
-                        <StyledText>
-                            {props.title}
-                        </StyledText>
+                        <StyledText>{props.title}</StyledText>
                     </RelativdivTitle>
-
                 </div>
             </StyledCardWrapper>
         </div>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardListWrapper = styled.div`
+export const CardWrapper = styled.div`
 text-align: center;
   display: grid;
   grid-template-columns: 300px 300px 300px 300px;
