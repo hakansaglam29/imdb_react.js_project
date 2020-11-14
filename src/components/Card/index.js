@@ -4,12 +4,12 @@ import { Styledp, Show, RelativdivTitle, Relativdiv, StyledCardWrapper, StyledTe
 export const Card = (props) => {
     const [showData, setShowData] = useState('none');
     function showOverview() {
-        if (showData == 'none') {
+        if (showData === 'none') {
             setShowData('block')
     };}
 
      function DontshowOverview() {
-        if (showData == 'block') {
+        if (showData === 'block') {
             setShowData('none')
     };}
 

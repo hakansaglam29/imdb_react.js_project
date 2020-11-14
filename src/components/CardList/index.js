@@ -28,7 +28,7 @@ export const CardList = (props) => {
             <SearchBar onChange={e => setInputData(e.target.value)} />
             <CardListWrapper>
                 {movieData && movieData.map(movie => {
-                    return <Card title={movie.title} release_date={movie.release_date} poster_path={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} overview={movie.overview} release_date={movie.release_date} vote_average={movie.vote_average}/>
+                    return <Card title={movie.title} poster_path={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} overview={movie.overview} release_date={movie.release_date} vote_average={movie.vote_average}/>
 
                 })
 
