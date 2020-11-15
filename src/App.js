@@ -12,11 +12,13 @@ import { SearchBar } from './components/SearchBar';
 // Style Component
 import { CardWrapper, StyledPagination } from './App.style'
 
-const apiKey = "d161df73b66b9d1b527d3526c891aeca"; //temporary
+const apiKey = "api_key"; //temporary
 const baseUrl = "https://api.themoviedb.org/3/search/movie";
+
 
 function App(props) {
   const [movieData, setMovieData] = useState(null);
+  const [copyMovieData, setCopyMovieData] = useState(null);
   const [inputData, setInputData] = useState('live')
   const [page, setPage] = React.useState(1);
 
@@ -33,15 +35,39 @@ function App(props) {
         page: page,
       }
     })
-      .then((res) => setMovieData(res.data.results))
+      .then((res) => { 
+        setMovieData(res.data.results);
+        if (copyMovieData?.length==0) {
+          
+          
+        };
+          })
+  }, [inputData, page])
+
+  useEffect(() => {
+    axios.get(baseUrl, {
+      params: {
+        api_key: apiKey,
+        query: inputData,
+        page: page +1 ,
+      }
+    })
+      .then((res) => { 
+        setCopyMovieData(res.data.results);
+        if (copyMovieData?.length==0) {
+          setPage(1)
+
+        };
+          })
   }, [inputData, page])
 
   function ChangeSetInputData(e) {
+    setPage(1)
     setInputData(e.target.value)
   }
 
   function PageCount() {
-    for (let i = 1; i = 2; i++) {
+    for (let i = 1; i = 10; i++) {
     }
   }
 
@@ -65,7 +91,7 @@ function App(props) {
               title={movie.title}
               poster_path={
                 movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                  : "https://tse2.mm.bing.net/th?id=OIP.ai9mtrwlPjK4Tutfq4m-ugHaL2&pid=Api"}
+                  : "https://upload.wikimedia.org/wikipedia/en/f/f9/No-image-available.jpg"}
               overview={movie.overview}
               release_date={movie.release_date}
               vote_average={movie.vote_average} />

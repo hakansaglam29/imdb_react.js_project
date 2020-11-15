@@ -11,6 +11,8 @@ export const StyledCardWrapper = styled.div`
     justify-content: space-between;
     background:crimson;
     overflow:hidden; 
+    width: 300px;
+    margin:20px;
 `;
 
 export const StyledText = styled.p`
