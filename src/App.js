@@ -12,19 +12,15 @@ import { SearchBar } from './components/SearchBar';
 // Style Component
 import { CardWrapper, StyledPagination } from './App.style'
 
-<<<<<<< HEAD
 const apiKey = "api_key"; //temporary
-=======
-const apiKey = "api_key"; //add your api_key
->>>>>>> b7d16d5d0aaa25cef10c6458f3f9c74147f6b50d
 const baseUrl = "https://api.themoviedb.org/3/search/movie";
 
 
 function App(props) {
   const [movieData, setMovieData] = useState(null);
-  const [copyMovieData, setCopyMovieData] = useState(null);
   const [inputData, setInputData] = useState('live')
-  const [page, setPage] = React.useState(1);
+  const [countPage, setCountPage] = useState(1)
+  const [page, setPage] = useState(1);
 
 
   const handleChange = (state, value) => {
@@ -39,30 +35,13 @@ function App(props) {
         page: page,
       }
     })
-      .then((res) => { 
+      .then((res) =>  {
         setMovieData(res.data.results);
-        if (copyMovieData?.length==0) {
-          
-          
-        };
-          })
-  }, [inputData, page])
-
-  useEffect(() => {
-    axios.get(baseUrl, {
-      params: {
-        api_key: apiKey,
-        query: inputData,
-        page: page +1 ,
-      }
-    })
-      .then((res) => { 
-        setCopyMovieData(res.data.results);
-        if (copyMovieData?.length==0) {
-          setPage(1)
-
-        };
-          })
+        if (res.data.total_pages>=5) {
+          setCountPage(5);
+        } else 
+        setCountPage(res.data.total_pages);
+      })
   }, [inputData, page])
 
   function ChangeSetInputData(e) {
@@ -70,10 +49,7 @@ function App(props) {
     setInputData(e.target.value)
   }
 
-  function PageCount() {
-    for (let i = 1; i = 10; i++) {
-    }
-  }
+
 
   return (
     <>
@@ -82,9 +58,10 @@ function App(props) {
       <StyledPagination>
         <Pagination
           variant="outlined"
-          count={PageCount}
+          count={countPage}
           page={page}
           onChange={handleChange}
+          color='standart'
           />
       </StyledPagination>
       <CardWrapper>

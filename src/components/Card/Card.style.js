@@ -13,6 +13,7 @@ export const StyledCardWrapper = styled.div`
     overflow:hidden; 
     width: 300px;
     margin:20px;
+    margin-left:20px
 `;
 
 export const StyledText = styled.p`

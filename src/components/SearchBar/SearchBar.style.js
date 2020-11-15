@@ -5,7 +5,7 @@ export const StyledDiv = styled.div`
   padding-top: 10px;
   background-color: rgb(201, 17, 17);
   width:100%;
-  height: 50px;
+  height: 51px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,10 +16,12 @@ export const StyledDiv = styled.div`
 
 export const StyledInput = styled.input`
    width: 400px;
-  padding: 12px;
+  padding: 14px;
   border-radius: 10px;
   border: 1px solid darkred;
   background-color: rgb(255, 255, 255);
-    
+  @media (max-width: 476px)  {
+    width: 80%;
+  } 
 `;
 
