@@ -56,5 +56,4 @@ function Movie(props) {
     </MovieContext.Provider>
   );
 }
-
 export default Movie;
