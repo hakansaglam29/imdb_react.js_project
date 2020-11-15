@@ -12,7 +12,11 @@ import { SearchBar } from './components/SearchBar';
 // Style Component
 import { CardWrapper, StyledPagination } from './App.style'
 
+<<<<<<< HEAD
 const apiKey = "api_key"; //temporary
+=======
+const apiKey = "api_key"; //add your api_key
+>>>>>>> b7d16d5d0aaa25cef10c6458f3f9c74147f6b50d
 const baseUrl = "https://api.themoviedb.org/3/search/movie";
 
 
