@@ -1,38 +1,62 @@
 
-import { VideoSection } from './components/VideoSection';
+
 import React, { useState, useEffect } from "react";
-import { Card } from "./components/Card";
 import axios from "axios";
+import { Pagination } from "@material-ui/lab";
+
+// Components
+import { Card } from "./components/Card";
+import { VideoSection } from './components/VideoSection';
 import { SearchBar } from './components/SearchBar';
-import { CardWrapper } from './App.style'
 
+// Style Component
+import { CardWrapper, StyledPagination } from './App.style'
 
-const apiKey = "api_key"; //temporary
+const apiKey = "d161df73b66b9d1b527d3526c891aeca"; //temporary
 const baseUrl = "https://api.themoviedb.org/3/search/movie";
 
 function App(props) {
   const [movieData, setMovieData] = useState(null);
   const [inputData, setInputData] = useState('live')
+  const [page, setPage] = React.useState(1);
+
+
+  const handleChange = (state, value) => {
+    setPage(value);
+  };
 
   useEffect(() => {
     axios.get(baseUrl, {
       params: {
         api_key: apiKey,
         query: inputData,
-        page: 1,
+        page: page,
       }
     })
       .then((res) => setMovieData(res.data.results))
-  }, [inputData])
+  }, [inputData, page])
 
   function ChangeSetInputData(e) {
     setInputData(e.target.value)
   }
-  
+
+  function PageCount() {
+    for (let i = 1; i = 2; i++) {
+    }
+  }
+
   return (
     <>
       <VideoSection />
       <SearchBar onChange={ChangeSetInputData} />
+      <StyledPagination>
+        <Pagination
+          variant="outlined"
+          count={PageCount}
+          page={page}
+          onChange={handleChange}
+          />
+      </StyledPagination>
       <CardWrapper>
         {movieData?.map(
           (movie, index) => {
@@ -48,6 +72,7 @@ function App(props) {
           })
         }
       </CardWrapper>
+
     </>
 
   );
