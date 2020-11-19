@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const movieDetailBaseUrl = "https://api.themoviedb.org/3/movie/"
-const apiKey = "d161df73b66b9d1b527d3526c891aeca"; //temporary
+const apiKey = "api_keys"; //temporary
 const baseImageUrl = "https://image.tmdb.org/t/p/w500";
 
 export default function MovieDetails() {
