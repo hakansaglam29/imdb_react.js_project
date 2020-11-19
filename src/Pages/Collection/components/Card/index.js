@@ -1,10 +1,8 @@
-import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
 import { Styledp, Show, RelativdivTitle, Relativdiv, StyledCardWrapper, StyledText, StyledImage, Styledowerview } from "./Card.style"
 
 export const Card = (props) => {
     const [showData, setShowData] = useState('none');
-    const history = useHistory();
 
 
     function Overview() {
@@ -17,7 +15,7 @@ export const Card = (props) => {
         <div>
             <StyledCardWrapper>
                 <div>
-                    <Show onMouseOver={Overview} onMouseOut={Overview} onClick={() => history.push(`/detail/${props.id}`)}>
+                    <Show onMouseOver={Overview} onMouseOut={Overview}>
                         <Relativdiv>
                             <Styledowerview style={{ display: showData }}>
                                 <Styledp>{props.overview}</Styledp>

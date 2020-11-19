@@ -23,8 +23,9 @@ function Movie(props) {
   const [page, setPage] = useState(1);
 
 
-  const handleChange = (state, value) => {
-    setPage(value);
+  const handleChange = ( event, a) => {
+    setPage(a);
+    console.log(event);
   };
 
   useEffect(() => {

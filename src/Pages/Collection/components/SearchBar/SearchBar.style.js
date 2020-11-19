@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
-   text-align: center;
+  text-align: center;
   padding-top: 10px;
   background-color: rgb(201, 17, 17);
   width:100%;
@@ -15,8 +15,7 @@ export const StyledDiv = styled.div`
 `;
 
 export const StyledInput = styled.input`
-  color: white;
-   width: 400px;
+  width: 400px;
   padding: 14px;
   border-radius: 10px;
   border: 1px solid darkred;
@@ -25,4 +24,3 @@ export const StyledInput = styled.input`
     width: 80%;
   } 
 `;
-
