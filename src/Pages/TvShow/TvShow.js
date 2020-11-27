@@ -9,7 +9,7 @@ import { SearchBar } from './components/SearchBar';
 import {CardList} from "./components/CardList";
 
 
-const apiKey = "api_key"; //temporary
+const apiKey = "d161df73b66b9d1b527d3526c891aeca"; //temporary
 const baseUrl = "https://api.themoviedb.org/3/search/tv";
 
 export const TvShowContext  = createContext();
