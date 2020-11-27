@@ -10,7 +10,7 @@ import {CardList} from "./components/CardList";
 
 
 
-const apiKey = "d161df73b66b9d1b527d3526c891aeca"; //temporary
+const apiKey = process.env.REACT_APP_API_KEY; //temporary
 const baseUrl = "https://api.themoviedb.org/3/search/movie";
 
 // We are changing now to Context Consept
