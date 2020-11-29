@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { cyan } from "@material-ui/core/colors";
 
 const movieDetailBaseUrl = "https://api.themoviedb.org/3/movie/"
 const apiKey = "d161df73b66b9d1b527d3526c891aeca"; //temporary
@@ -23,7 +24,7 @@ export default function MovieDetails() {
 
     return (
         <div>
-            <h1>{movieDetails?.original_title}</h1>
+            <h1 style={{backgroundColor: "cyan"}}>{movieDetails?.original_title}</h1>
             <img src={baseImageUrl+movieDetails?.poster_path} alt={"Movie Poster"}/>
             <p>{movieDetails?.overview}</p> 
         </div>
